@@ -1,0 +1,5 @@
+CREATE TRIGGER `stud_marks1` BEFORE UPDATE ON `subject_marks`
+ FOR EACH ROW set New.total = subject_marks.Subject1 +  subject_marks.Subject2 +  subject_marks.Subject3  +subject_marks.Subject4 +subject_marks.Subject5 +subject_marks.Subject6, NEW.per = subject_marks.total * 60 / 100
+
+ CREATE TRIGGER `stud_marks` BEFORE INSERT ON `subject_marks`
+ FOR EACH ROW set New.total = subject_marks.Subject1 +  subject_marks.Subject2 +  subject_marks.Subject3  +subject_marks.Subject4 +subject_marks.Subject5 +subject_marks.Subject6, NEW.per = subject_marks.total * 60 / 100
